@@ -32,7 +32,8 @@ class _SignupScreenState extends State<SignupScreen> {
   final _passwordController = TextEditingController();
 
   final _userNameController = TextEditingController();
-
+  final _contactController = TextEditingController();
+  final _addressController = TextEditingController();
   FirebaseAuth auth = FirebaseAuth.instance;
 
   @override
@@ -73,6 +74,28 @@ class _SignupScreenState extends State<SignupScreen> {
                       Icons.person_outlined,
                     ),
                     hintText: 'Username'),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              TextField(
+                controller: _addressController,
+                decoration: const InputDecoration(
+                    icon: Icon(
+                      Icons.note_alt,
+                    ),
+                    hintText: 'Address'),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              TextField(
+                controller: _contactController,
+                decoration: const InputDecoration(
+                    icon: Icon(
+                      Icons.call,
+                    ),
+                    hintText: 'Contact'),
               ),
               const SizedBox(
                 height: 10,
@@ -121,6 +144,8 @@ class _SignupScreenState extends State<SignupScreen> {
         .set({
       'username': _userNameController.value.text,
       'email': _emailController!.value.text,
+      'contact': _contactController.value.text,
+      'Address': _addressController.value.text
     });
   }
 }

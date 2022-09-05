@@ -1,6 +1,6 @@
 # expense
 
-A new Flutter project.
+A new Flutter project for Expense App.
 
 ## Getting Started
 
